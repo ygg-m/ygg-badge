@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.ygg_badge {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.8;
+  position: absolute;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: 200ms;
+  align-items: flex-end;
+  font-family: sans-serif;
+}
+
+.ygg_badge:hover {
+  opacity: 1;
+}
+
+.ygg_badge > .ygg_tooltip {
+  user-select: none;
+  background-color: #eee;
+  outline: 1px solid #333;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  justify-content: end;
+  transition: 200ms;
+  opacity: 0;
+  font-size: 0.75rem;
+  border-radius: 1rem;
+}
+
+.ygg_badge > .ygg_tooltip.show {
+  opacity: 1;
+}
+
+.ygg_badge > .ygg_links {
+  box-sizing: border-box;
+  background-color: #eee;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  outline: 1px solid #333;
+  border-radius: 0 0 0.5rem 0.5rem;
+  overflow: hidden;
+}
+
+.ygg_badge > .ygg_links > .ygg_link_a,
+.ygg_badge > .ygg_links > .ygg_link_a:hover {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  border: 0;
+  background: none;
+}
+
+.ygg_badge > .ygg_links > .ygg_link_a:hover {
+  background-color: #7fe9de;
+  outline: 1px solid #333;
+}
+
+.ygg_badge > .ygg_links > .ygg_link_a > .ygg_link_a_img {
+  object-fit: cover;
+}
+
+/* media querie */
+@media (max-width: 500px) {
+  .ygg_badge {
+    width: 100vw;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .ygg_badge > .ygg_tooltip {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+
+  .ygg_badge > .ygg_links {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .ygg_badge > .ygg_links > .ygg_link_a,
+  .ygg_badge > .ygg_links > .ygg_link_a:hover {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
