@@ -70,4 +70,5 @@ container.appendChild(linksContainer);
 container.appendChild(tooltip);
 
 // insertion in HTML
-document.body.appendChild(container);
+let firstChild = document.body.firstChild;
+document.body.insertBefore(container, firstChild);
